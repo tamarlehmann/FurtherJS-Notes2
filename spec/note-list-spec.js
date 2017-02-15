@@ -3,7 +3,9 @@ function testDisplayNoteListReturnsListOfNotes() {
   assert.isTrue(Array.isArray(noteList.displayList()));
 }
 
+console.log("2. Has a method that will return the list of notes.");
 testDisplayNoteListReturnsListOfNotes();
+
 
 function listCanCreateAndStoreNotes() {
   var noteList = new NoteList();
@@ -12,5 +14,5 @@ function listCanCreateAndStoreNotes() {
 
   assert.isTrue(noteList.displayList().length === 2);
 }
-
+console.log("3. Checks that you can create and store notes in the notelist.");
 listCanCreateAndStoreNotes();
