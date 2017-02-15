@@ -1,8 +1,8 @@
 function testViewDisplaysListOfNotes() {
   var noteList = new NoteList();
-  noteList.addNote("This is a note");
+  noteList.addNote("Hello my name is Dylan");
   var listView = new ListView(noteList);
-  var htmlString = "<ul><li><div>This is a note</div></li></ul>";
+  var htmlString = "<ul><li><div>Hello my name is Dyl</div></li></ul>";
   assert.isTrue(listView.displayNotes() === htmlString);
 }
 
@@ -11,10 +11,10 @@ testViewDisplaysListOfNotes();
 
 function testViewDisplaysListOfTwoNotes() {
   var noteList = new NoteList();
-  noteList.addNote("This is a note");
-  noteList.addNote("This is another note");
+  noteList.addNote("Hello my name is Dylan");
+  noteList.addNote("Hello my name is Tamar");
   var listView = new ListView(noteList);
-  var htmlString = "<ul><li><div>This is a note</div></li><li><div>This is another note</div></li></ul>";
+  var htmlString = "<ul><li><div>Hello my name is Dyl</div></li><li><div>Hello my name is Tam</div></li></ul>";
   assert.isTrue(listView.displayNotes() === htmlString);
 }
 
