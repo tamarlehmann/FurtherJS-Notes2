@@ -4,7 +4,7 @@ function testNoteControllerCanBeInstantiated() {
   assert.isTrue(controller instanceof NoteController);
 }
 
-console.log("7. A NoteController can be instantiated.");
+console.log("8. A NoteController can be instantiated.");
 testNoteControllerCanBeInstantiated();
 
 
@@ -17,5 +17,5 @@ function testAppElementContainsNotesAsHTML() {
   assert.isTrue(controller.element.innerHTML === "<ul><li><div>This is a note</div></li></ul>");
 }
 
-console.log("8. The app element contains notes as HTML string.");
+console.log("9. The app element contains notes as HTML string.");
 testAppElementContainsNotesAsHTML();
