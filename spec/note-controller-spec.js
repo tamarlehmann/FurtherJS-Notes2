@@ -14,7 +14,7 @@ function testAppElementContainsNotesAsHTML() {
   list.addNote("This is a note");
   var controller = new NoteController(list, doubleElement);
   controller.htmlInserter();
-  assert.isTrue(controller.element.innerHTML === "<ul><li><div>This is a note</div></li></ul>");
+  assert.isTrue(controller.element.innerHTML === "<ul><li><div><a href=\"#notes/" + 0 + "\">" + "This is a note</a></div></li></ul>");
 }
 
 console.log("9. The app element contains notes as HTML string.");
