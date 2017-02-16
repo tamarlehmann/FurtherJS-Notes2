@@ -5,9 +5,11 @@
     <title>Notes app</title>
   </head>
   <body>
-    <div id="app">
-      Hello
-    </div>
+    <form id="text" action="#notes" method="post">
+      <input type="textarea" name="textarea"></input>
+      <input type="submit" value="Create"></input>
+    </form>
+    <div id="app"></div>
     <div id="singlenote"></div>
     <script src="lib/note-model.js"></script>
     <script src="lib/note-list-model.js"></script>
