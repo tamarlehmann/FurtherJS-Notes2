@@ -1,8 +1,16 @@
 function testViewDisplaysListOfNotes() {
-  var noteList = new NoteList();
-  noteList.addNote("Hello my name is Dylan");
+  var note = {
+    displayNote: function() {
+      return "Hello my name is Dylan";
+    },
+  };
+  var noteList = {
+    displayList: function() {
+      return [note];
+    },
+  };
   var listView = new ListView(noteList);
-  var htmlString = "<ul><li><div><a href=\"#notes/" + 0 + "\">" + "Hello my name is Dyl</a></div></li></ul>";
+  var htmlString = "<ul><li><div>Hello my name is Dyl</div></li></ul>";
   assert.isTrue(listView.displayNotes() === htmlString);
 }
 
@@ -10,11 +18,23 @@ console.log("5. Has a method that will return a string of HTML that represents t
 testViewDisplaysListOfNotes();
 
 function testViewDisplaysListOfTwoNotes() {
-  var noteList = new NoteList();
-  noteList.addNote("Hello my name is Dylan");
-  noteList.addNote("Hello my name is Tamar");
+  var note = {
+    displayNote: function() {
+      return "Hello my name is Dylan"
+    },
+  };
+  var note2 = {
+    displayNote: function() {
+      return "Hello my name is Tamar"
+    },
+  };
+  var noteList = {
+    displayList: function() {
+      return [note, note2];
+    },
+  };
   var listView = new ListView(noteList);
-  var htmlString = "<ul><li><div><a href=\"#notes/" + 0 + "\">" + "Hello my name is Dyl</a></div></li><li><div><a href=\"#notes/" + 1 + "\">" + "Hello my name is Tam</a></div></li></ul>";
+  var htmlString = "<ul><li><div>Hello my name is Dyl</div></li><li><div>Hello my name is Tam</div></li></ul>";
   assert.isTrue(listView.displayNotes() === htmlString);
 }
 
@@ -23,7 +43,11 @@ testViewDisplaysListOfTwoNotes();
 
 
 function testViewDisplaysListOfNoNotes() {
-  var noteList = new NoteList();
+  var noteList = {
+    displayList: function() {
+      return [];
+    },
+  };
   var listView = new ListView(noteList);
   var htmlString = "<ul></ul>";
   assert.isTrue(listView.displayNotes() === htmlString);
